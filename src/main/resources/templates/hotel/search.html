@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>ホテル検索</h1>
+<form th:action="@{/hotel/search}" method="post">
+    <p th:text="${errorMessage}" style="color: red"></p>
+    <input type="text" name="price">円以下 <br>
+    <button>検索</button>
+</form>
+<table th:each="hotel : ${hotels}" border="1">
+    <tr>
+        <td>ホテル名</td>
+        <td th:text="${hotel.hotelName}"></td>
+    </tr>
+    <tr>
+        <td>最寄駅</td>
+        <td th:text="${hotel.nearestStation}"></td>
+    </tr>
+    <tr>
+        <td>価格</td>
+        <td th:text="${hotel.price}"></td>
+    </tr>
+</table>
+</body>
+</html>
