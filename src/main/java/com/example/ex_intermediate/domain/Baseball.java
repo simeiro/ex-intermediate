@@ -1,8 +1,15 @@
 package com.example.ex_intermediate.domain;
 
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
 /**
  * 野球のドメイン.
  */
+@Getter
+@Setter
+@ToString
 public class Baseball {
     /**
      * id.
