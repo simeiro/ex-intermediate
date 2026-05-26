@@ -67,6 +67,12 @@ public class BaseballRepository {
                 """;
         SqlParameterSource param = new MapSqlParameterSource().addValue("id", id);
 
-        return template.queryForObject(sql, param, BASEBALL_ROW_MAPPER);
+        //0件取得の際も対応できるようにqueryObjectを使わない
+        List<Baseball> baseballList = template.query(sql, param, BASEBALL_ROW_MAPPER);
+        if (baseballList.isEmpty()) {
+            return null;
+        }
+
+        return baseballList.getFirst();
     }
 }

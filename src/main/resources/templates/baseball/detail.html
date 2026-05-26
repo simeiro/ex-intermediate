@@ -6,5 +6,16 @@
 </head>
 <body>
 
+<h2>球団名</h2>
+<p th:text="${team.teamName}"></p>
+<h2>本拠地</h2>
+<p th:text="${team.headquarters}"></p>
+<h2>発足</h2>
+<p th:text="${team.inauguration}"></p>
+<h2>歴史</h2>
+<p style="white-space: pre-line" th:text="${team.history}"></p>
+
+<a th:href="@{/baseball}">戻る</a>
+
 </body>
 </html>
