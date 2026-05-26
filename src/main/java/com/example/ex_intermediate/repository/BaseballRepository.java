@@ -39,6 +39,8 @@ public class BaseballRepository {
                     history
                 FROM
                     teams
+                ORDER BY 
+                    inauguration
                 """;
 
         return template.query(sql, BASEBALL_ROW_MAPPER);
