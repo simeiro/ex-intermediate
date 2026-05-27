@@ -27,8 +27,9 @@ public class HotelController {
     private HotelService service;
 
     /**
+     * ホテルの検索画面を表示する.
      *
-     * @return
+     * @return　ホテルの検索画面
      */
     @GetMapping("")
     public String index(HotelForm hotelForm) {
@@ -36,27 +37,32 @@ public class HotelController {
     }
 
     /**
+     * ホテルの検索結果を表示する.
      *
-     * @return
+     * @return ホテルの検索結果
      */
     @PostMapping("/search")
     public String search(@Validated HotelForm hotelForm, BindingResult result, Model model) {
+        // バリデーションエラー + 文字列を除外する
         if (result.hasErrors()) {
             return "hotel/search";
         }
 
+        // 未入力時は全件表示
         Integer price = hotelForm.getPrice();
         if (price == null) {
             model.addAttribute("hotels", service.showList());
             return "hotel/search";
         }
 
+        // 検索結果なし
         List<Hotel> hotelList = service.searchByMaxPrice(price);
         if (hotelList.isEmpty()) {
             model.addAttribute("message", "%d円以下のホテル情報は存在しません".formatted(price));
             return "hotel/search";
         }
 
+        // 検索結果あり
         model.addAttribute("hotels", hotelList);
         return "hotel/search";
     }

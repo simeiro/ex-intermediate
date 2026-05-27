@@ -7,7 +7,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 /**
- *
+ * ホテル検索のフォーム.
  */
 @Getter
 @Setter
