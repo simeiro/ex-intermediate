@@ -5,7 +5,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 /**
- * 衣類のドメイン.
+ * 衣類情報のドメイン.
  */
 @Getter
 @Setter
