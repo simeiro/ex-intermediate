@@ -12,6 +12,10 @@ import lombok.ToString;
 @ToString
 public class Clothing {
     /**
+     * ID
+     */
+    private Long id;
+    /**
      * 性別.
      * 0は男性、1は女性。
      */
