@@ -6,9 +6,10 @@
 </head>
 <body>
 <h1>ホテル検索</h1>
-<form th:action="@{/hotel/search}" method="post">
-    <p th:text="${errorMessage}" style="color: red"></p>
-    <input type="text" name="price">円以下 <br>
+<form th:action="@{/hotel/search}" th:object="${hotelForm}" method="post">
+    <p th:errors="*{price}" style="color: red"></p>
+    <p th:text="${message}"></p>
+    <input type="text" th:field="*{price}">円以下 <br>
     <button>検索</button>
 </form>
 <table th:each="hotel : ${hotels}" border="1">
