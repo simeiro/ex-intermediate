@@ -53,6 +53,13 @@ public class ClothingController {
                 clothingForm.getGender(),
                 clothingForm.getColor()
         );
+        //検索結果なし
+        if (clothingList.isEmpty()) {
+            model.addAttribute("message", "検索結果がありませんでした");
+            return "clothing/search";
+        }
+
+        //検索結果あり
         model.addAttribute("clothes", clothingList);
 
         return "clothing/search";

@@ -9,6 +9,7 @@
 <h1>衣類検索</h1>
 <form th:action="@{/clothing/search}" th:object="${clothingForm}" method="post">
     <p th:errors="*{gender}" style="color: red"></p>
+    <p th:text="${message}"></p>
     <label>
         <input type="radio" name="gender" value="0" th:field="*{gender}">Man <br>
     </label>
