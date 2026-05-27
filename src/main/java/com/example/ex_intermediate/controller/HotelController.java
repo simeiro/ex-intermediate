@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.List;
 
 /**
- * ホテルのコントローラー.
+ * ホテル情報を操作するコントローラー.
  * <p>
  * 検索画面を表示し、検索結果を表示する操作を管理する。
  */
@@ -48,6 +48,7 @@ public class HotelController {
             return "hotel/search";
         }
 
+        //サービス内で一つにまとめる
         // 未入力時は全件表示
         Integer price = hotelForm.getPrice();
         if (price == null) {

@@ -9,7 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 /**
- * ホテルのサービス.
+ * ホテル情報を操作するサービス.
  */
 @Service
 @Transactional

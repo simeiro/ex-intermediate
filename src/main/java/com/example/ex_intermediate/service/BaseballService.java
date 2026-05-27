@@ -9,7 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 /**
- * 野球のサービス.
+ * 野球チームを操作するサービス.
  */
 @Service
 @Transactional

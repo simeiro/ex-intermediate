@@ -12,7 +12,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 /**
- * 野球のリポジトリ.
+ * baseball_teamsテーブルを操作するリポジトリ.
  */
 @Repository
 public class BaseballRepository {
